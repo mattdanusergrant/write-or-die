@@ -257,7 +257,7 @@
     <div class="etools">
       <button class="tbtn" id="bJump" title="Caret is on a codex name — jump to its entry" style="display:none;padding:4px 9px;font-size:12px">📖 <span id="jumpName"></span></button>
       <button class="tbtn" id="bSel" style="padding:4px 9px;font-size:12px">＋ Selection → Codex</button>
-      <span class="sp" id="counts">0 words</span>
+      <span class="sp" id="counts">0 chars</span>
     </div>
     <div id="draft" contenteditable="true" spellcheck="true" data-placeholder="You can't delete. You can't edit. Just keep writing."></div>
   </section>
@@ -1053,7 +1053,7 @@ $("cloudOutBtn").onclick = async ()=>{
 if(new URLSearchParams(location.search).has("reset")){
   localStorage.clear(); location.replace(location.pathname); // strip ?reset
 }
-rollover(); buildTabs(); renderCodex(); renderProjects(); renderChapters(); renderStats(); renderDeath(); applyInvisibleUI(); applyPhase(); save(); cloudInit();
+rollover(); buildTabs(); renderCodex(); renderProjects(); renderChapters(); renderStats(); renderDeath(); applyInvisibleUI(); applyPhase(); save(); cloudInit(); draft.focus();
 // catch a midnight crossing (or days of neglect) while the tab was left open
 window.addEventListener("focus", ()=>{ rollover(); renderStats(); renderDeath(); save(); });
 </script>
